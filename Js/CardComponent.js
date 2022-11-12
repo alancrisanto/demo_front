@@ -1,13 +1,16 @@
-import data from './data.js'
+import { getProducts } from './data.js';
 
-const CardComponent = {
-  render: ()=> {
-    const {products} = data;
+
+const CardComponent  = {
+  render: async () => {
+    const  {content}  =  await getProducts()
+    console.log("products",content)
     return `
-    ${products.map(product =>`
+    ${content.map(product =>`
+    
     <div class="col">
         <div class="card">
-          <img src=${product.image} class="card-img-top" alt=${product.info}>
+          <img src=${product.url_image} class="card-img-top" alt=${product.info}>
         <div class="card-body">
           <p class="card-text">${product.name}</p>
         </div>

@@ -1,48 +1,14 @@
-export default {
-  products: [
-    {
-    id: 1,
-    name: "Beer",
-    image: '../assets/images/Astronauta.jpg',
-    price: 60,
-    discount: 10,
-    category: 3
+const BASE_URL = "http://127.0.0.1:3000"
 
-    },
-    {
-      id: 2,
-      name: "Tea",
-      image: '../assets/images/Astronauta.jpg',
-      price: 50,
-      discount: 10,
-      category: 3
-  
-    },
-    {
-      id: 3,
-      name: "Soda",
-      image: '../assets/images/Astronauta.jpg',
-      price: 40,
-      discount: 10,
-      category: 3
-  
-    },
-    {
-      id: 4,
-      name: "Juice",
-      image: '../assets/images/Astronauta.jpg',
-      price: 30,
-      discount: 10,
-      category: 3
-  
-    },
-  ],
 
-  categories : [
-    {
-      id: 3,
-      name: 'Drinks'
-    }
-  ]
+export async function getProducts() {
+  const result = await fetch(`${BASE_URL}/products`);
+  const response = result.json();
+  return response
+}
 
+export async function getCategories(){
+  const result = await fetch(`${BASE_URL}/category`)
+  const response =  await result.json();
+  return response
 }
