@@ -7,19 +7,17 @@ const CardComponent  = {
     console.log("products",content)
     return `
     ${content.map(product =>`
-    
-    <div class="col">
-        <div class="card">
-          <img src=${product.url_image} class="card-img-top" alt=${product.info}>
-        <div class="card-body">
-          <p class="card-text">${product.name}</p>
+        <div class="col" data-key="${product.id}">
+          <div class="card text-center">
+            <img src="${product.url_image}" class="card-img-top product-img" alt="${product.name}">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">${product.name}</li>
+            </ul>
+            <div class="d-flex justify-content-center card-footer">
+              <p class="card-price">$${product.price}</p>
+            </div>
+          </div>
         </div>
-        <hr>
-        <div class="d-flex card-body">
-          <p class="card-price">$${product.price}</p>
-        </div>
-      </div>
-    </div>
     `).join('\n')}
     `
   }

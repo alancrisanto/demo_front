@@ -1,6 +1,7 @@
 import CardComponent from "./CardComponent.js"
 import {CategoryComponent} from "./CategoryComponent.js"
 import { NavBarCategoryComponent } from "./CategoryComponent.js"
+import { replaceImage } from "./functions.js"
 
 const router = async ()=> {
   const cardsContainer = document.querySelector(".cards-container")
@@ -11,6 +12,8 @@ const router = async ()=> {
 
   const navbarCategoryContainer = document.querySelector(".category-navbar")
   navbarCategoryContainer.innerHTML = await NavBarCategoryComponent.render()
+
+  replaceImage()
 }
 
 window.addEventListener("load", router)
