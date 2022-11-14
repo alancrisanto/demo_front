@@ -4,12 +4,9 @@ export const CategoryComponent = {
   render: async ()=> {
     const {content} = await getCategories();
     return `
+    <button class="btn btn-outline-success" data-id="all">All</button>
     ${content.map(category =>`
-          <li class="list-group-item" id="${category.id}" data-key="${category.id}">
-            <a href="">
-              ${category.name}
-            </a>
-          </li>
+          <button  class="btn btn-outline-success" data-id="${category.name}" >${category.name}</button>
     `).join('\n')}
     `
   }
@@ -21,9 +18,13 @@ export const NavBarCategoryComponent = {
     const {content} = await getCategories();
     console.log(content);
     return `
+    <li>
+      <button class="dropdown-item btn btn-outline-success" data-id="all">All</button>
+    </li>
     ${content.map(category =>`
-              <li id="${category.id}" data-key="${category.id}">
-                <a class="dropdown-item" href="#">${category.name}</a>
+                
+              <li>
+                <button class="dropdown-item btn btn-outline-success" data-id="${category.name}">${category.name}</button>
               </li>
     `).join('\n')}
     `

@@ -7,7 +7,7 @@ const CardComponent  = {
     console.log("products",content)
     return `
     ${content.map(product =>`
-        <div class="col" data-key="${product.id}">
+        <div class="col ${product.category_categoryToproduct.name}" data-category="${product.category_categoryToproduct.name}">
           <div class="card text-center">
             <img src="${product.url_image}" class="card-img-top product-img" alt="${product.name}">
             <ul class="list-group list-group-flush">
