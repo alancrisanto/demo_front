@@ -54,50 +54,12 @@ export function filterProduct(value) {
   }
 
 
-// export function filterProduct () {
-
-//     let filterBtn = document.querySelectorAll(".btn");
-
-//     const category = filterBtn.forEach( btn => {
-//     btn.addEventListener("click", function(e) {
-//       const dataId = e.currentTarget.dataset.id
-//       return dataId
-//     })
-//     })
-
-//     console.log(category)
-
-//     //Button class code
-//     filterBtn.forEach(btn => {
-//       //check if value equals innerText
-//       if (category.toUpperCase() == btn.innerText.toUpperCase()) {
-//         btn.classList.add("active");
-//       } else {
-//         btn.classList.remove("active");
-//       }
-//     });
-  
-//       //select all cards
-//       let elements = document.querySelectorAll(".col");
-//       //loop through all cards
-//       elements.forEach((element) => {
-//         //display all cards on 'all' button click
-//         if (category == "all") {
-//           element.classList.remove("hide");
-//         } else {
-//           //Check if element contains category class
-//           if (element.classList.contains(category)) {
-//             //display element based on category
-//             element.classList.remove("hide");
-//           } else {
-//             //hide other elements
-//             element.classList.add("hide");
-//           }
-//         }
-//       });
-//     }
-  
-
+export function searchProduct () {
+  document.querySelector(".searchBtn").addEventListener("click", () => {
+    let searchInput = document.querySelector(".search-input").value;
+    localStorage.setItem("search", searchInput)
+  });
+}
 
 
 

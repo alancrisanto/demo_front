@@ -12,3 +12,9 @@ export async function getCategories(){
   const response =  await result.json();
   return response
 }
+
+export async function getFilterProducts(name){
+  const result = await fetch(`${BASE_URL}/product-search/?name=${name}`);
+  const response = result.json();
+  return response
+}
