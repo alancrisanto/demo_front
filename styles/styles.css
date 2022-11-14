@@ -12,8 +12,7 @@ img{
 	padding: 1rem;
 }
 
-.list-group-item a, .dropdown-item {
-	text-decoration: none;
+.btn {
 	text-transform: capitalize;
 }
 
@@ -33,6 +32,15 @@ img{
 	font-size: 1.3rem;
 }
 
+.active {
+  background-color: #6759ff;
+  color: #ffffff;
+}
+
+.hide {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
 	.navbar-nav {
 		display: none;
@@ -40,7 +48,7 @@ img{
 }
 
 @media screen and (max-width: 767px) {
-	.list-group {
+	.category-group {
 		display: none;
 	}
 }

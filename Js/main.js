@@ -1,7 +1,7 @@
 import CardComponent from "./CardComponent.js"
 import {CategoryComponent} from "./CategoryComponent.js"
 import { NavBarCategoryComponent } from "./CategoryComponent.js"
-import { replaceImage } from "./functions.js"
+import { replaceImage, filterProduct, getBtnCategory } from "./functions.js"
 
 const router = async ()=> {
   const cardsContainer = document.querySelector(".cards-container")
@@ -12,8 +12,11 @@ const router = async ()=> {
 
   const navbarCategoryContainer = document.querySelector(".category-navbar")
   navbarCategoryContainer.innerHTML = await NavBarCategoryComponent.render()
-
+  const category = localStorage.getItem("category")
   replaceImage()
+  getBtnCategory()
 }
 
 window.addEventListener("load", router)
+window.addEventListener("load", localStorage.removeItem("category"))
+window.addEventListener("load", filterProduct("all"))
